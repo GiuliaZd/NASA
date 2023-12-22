@@ -17,7 +17,12 @@ function App() {
     .catch(error=>console.log(error))
   }, [])
 
-  if (mediaType === 'image') {
+  if (!url){
+    return(
+      <>Loading... </>
+    )
+  }
+  else if (mediaType === 'image') {
     return (
       <>
         <p>Explanation: {explanation}</p>
