@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css'
 
 function App() {
-  const [explanation, setExpanation]=useState('');
+  const [explanation, setExplanation]=useState('');
   const [url, setUrl]=useState('');
   const [mediaType, setMediatype]=useState('');
 
@@ -17,11 +17,22 @@ function App() {
     .catch(error=>console.log(error))
   }, [])
 
-  return (
-    <>
-     
-    </>
-  )
+  if (mediaType === 'image') {
+    return (
+      <>
+        <p>Explanation: {explanation}</p>
+        <img alt="Nasa APOD" src={url} />
+      </>
+    );
+  }
+  else {
+    return (
+      <>
+        <p>Explanation: {explanation}</p>
+        <iframe width="520" height="415" src={url} title="Nasa APOD"></iframe>
+      </>
+    );
+  }
 }
 
-export default App
+export default App;
