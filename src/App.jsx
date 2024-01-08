@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css'
+import './App.css';
 
 function App() {
   const [explanation, setExplanation]=useState('');
@@ -38,6 +38,7 @@ function App() {
       </>
     );
   }
+  
 }
 
 export default App;
